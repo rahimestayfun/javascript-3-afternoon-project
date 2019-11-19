@@ -52,6 +52,30 @@ var employees = [
 
 //Code Here
 
+// let employeeUpdater = employees.forEach(function(element,index,arr){
+//   if(element[index].firstName === 'Theo'){
+//     delete element[index];
+//   }else if(element[index].firstName=== 'Loris'){
+//     return element.department = 'HR';
+//   }else{
+//     element;
+//   }
+// })
+// console.log(employeeUpdater())
+
+
+
+function employeeUpdater(){
+  for (let i=0; i< employees.length; i++){
+    if( employees[i].firstName=== 'Theo'){
+      delete employees[i].firstName;
+    }else if (employees[i].firstName=== 'Lorie'){
+     employees[i].department= 'HR';
+  }
+  }
+  return employees;
+}
+employeeUpdater(employees);
 
 
 ////////// PROBLEM 2 //////////
@@ -69,6 +93,18 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
+function removeDuplicates(){
+  for(let i=workplaceAccidents.length-1; i>=0; i--){
+
+    if(workplaceAccidents.indexOf(workplaceAccidents[i]) !== workplaceAccidents.lastIndexOf(workplaceAccidents[i])){
+      workplaceAccidents.splice(i,1);
+    }
+  }
+  return workplaceAccidents;
+  
+}
+  console.log(removeDuplicates());
+
 
 
 
@@ -96,9 +132,9 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-//Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
+let grumpyActivity= cat.catFriends[0].activities[1];
+let fluffy2ndFriend=cat.catFriends[1].name;
+
 
 
 
@@ -138,7 +174,12 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+function recordCleaner(){
+  for(let i=0;i<myCar.accidents.length;i++){
+    myCar.accidents[i].atFaultForAccident=false;
+
+  }
+}
 
 
 
@@ -158,5 +199,22 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
+function looper(){
+  // let nums=[];
+  for( let i=0; i<numsArr.length; i++){
+    console.log(i);
+    for (let j=0; j<numsArr[i].length;j++){
+      if (numsArr[i][j] % 2===1){
+        numsArr[i][j] = ('odd');
+      } else if (numsArr[i][j]%2==0){
+        numsArr[i][j] = ('even');
+    }
+  }
+  
+}
+console.log(numsArr);
+return numsArr;
+// return nums;
+}
 
 

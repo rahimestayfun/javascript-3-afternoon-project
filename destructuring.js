@@ -22,6 +22,7 @@ var carDetails = {
 */
 
 //Code Here
+let {color,make,model,year}= carDetails;
 
 
 
@@ -34,6 +35,7 @@ var carDetails = {
 */
 
 function greeting( obj ) {
+  let {title,firstName,lastName}= obj;
   //Code Here
   
   // Do not edit the code below.
@@ -52,13 +54,21 @@ function greeting( obj ) {
   Use object destructuring to save the property values to new variables.
   Sum up the values and return the total number.
 */
-
-//Code Here
-
-
-
+let population={
+  utah: 33,
+  california:55,
+  texas: 66,
+  arizona: 77
+}
+function totalPopulation(population){
+  const {utah, california, texas, arizona}= population;
+ let sum = utah+california+texas+arizona;
+ return sum;
+ }
+ 
+ totalPopulation(population)
+ 
 ////////// PROBLEM 4 //////////
-
 /*
   Write a function called ingredients that will take in an object. 
   This object will have 3 properties named carb, fat, and protein. 
@@ -67,7 +77,13 @@ function greeting( obj ) {
   Push these new variables to an array and return the array. 
 */
 
-//Code Here
+function ingredients(obj){
+  let total=[];
+  const {carb,fat,protein}= obj;
+  total.push(carb,fat,protein);
+  return total;
+}
+
 
 
 
@@ -84,19 +100,29 @@ function greeting( obj ) {
   The object properties will be named first, second, and third and their values will be numbers.
   Find the smallest number of the three and return that number.
 */
+// let a={
+//   third:3,
+//   second:2,
+//   first:1}
 
-//Code Here
+function largeNumbers({first,second,third}){
+  return Math.min(first,second,third);
+}
 
-
-
-////////// PROBLEM 6 //////////
 
 /*
   Write a function called numberGroups that will take a destructured object as it's parameter.
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
-
-//Code Here
-
+function numberGroups({a,b,c}){
+  if(a.length>b.length && a.length>c.length){
+    return a;
+  }else if(b.length>a.length&& b.length>c.length){
+    return b;
+  }else{
+    return c;
+  }
+ 
+}
 
