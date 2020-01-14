@@ -19,28 +19,34 @@ var values = {
   five: ' values.'
 } 
 
-for(var key in values) {
-  console.log(values[key])
-}
+// for(var key in values) {
+//   console.log(values[key])
+// }
+
 /*
   In this next example, we are accessing the property names themselves. Uncomment the code below, run it and look at what prints in the console.
 */
-for(var key in values) {
-  console.log(key)
-}
+
+// for(var key in values) {
+//   console.log(key)
+// }
+
+
+
 ////////// PROBLEM 1 //////////
 
 /*
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
-function showValues(values){
-  let newValue='';
-  for(var key in values){
-    newValue +=values[key];
+
+function showValues(values ) {
+  let all='';
+  for(let key in values){
+  all += values[key];
   }
-  return newValue;
+    return all;
 }
-showValues();
+showValues(values);
 
 
 
@@ -52,16 +58,17 @@ showValues();
   Return the updated object.
 */
 
-// Code Here
+//Code Here
 function greaterThan10(obj){
-  for(var key in obj){
-    if (obj[key]> 10){
-     obj[key]=0;
+  for(let key in obj){
+    if(obj[key]>10){
+      obj[key]=0;
+    }
   }
+  return obj;
 }
-return obj;
-}
-greaterThan10(obj)
+greaterThan10(obj);
+
 
 
 
@@ -72,12 +79,17 @@ greaterThan10(obj)
   Write a for in loop that loops over the object and changes every value to be itself multipled by 2.
   Return the updated object.
 */
+
+//Code Here
 function double(obj){
-  for(let key in obj){
-  obj[key]= obj[key]*2;
+  for(let prop in obj){
+    obj[prop]*=2;
   }
-  return obj;
+  return obj;  
 }
+double(obj)
+
+
 
 ////////// PROBLEM 4 //////////
 
@@ -89,15 +101,27 @@ function double(obj){
   By the end of the for in loop, you should have a sentence, return that sentence.
 */
 
-function secrets(obj){
-  let mystr='';
-  for(let key in obj){
+//Code Here
+let person={
+  shenry: 'one',
+  tom: 'two',
+  celine: 'four',
+  shat: 'seven'
+};
+function secrets(person){
+  let myStr='';
+  for (let key in person){
     if(key.startsWith('sh')){
-      mystr += obj[key];
+      myStr+= person[key];
     }
   }
-  return mystr;
+  return myStr;
 }
+secrets(person);
+
+
+
+
 /* 
   Sometimes it's needed to delete object properties. 
   All you need is the word delete before a reference to the object property value. 
@@ -118,6 +142,9 @@ function secrets(obj){
 
 
 
+
+
+
 ////////// PROBLEM 5 //////////
 
 /*
@@ -125,19 +152,22 @@ function secrets(obj){
   Delete the property password and return the object.
 */
 
+//Code Here
+
+
 function removePassword(obj){
-  for(var key in obj){
-    delete obj.password;
+  for(let key in obj){
+    delete obj['password'];
   }
   return obj;
 }
-
+removePassword(obj);
 
 
 ////////// PROBLEM 6 //////////
 
 // Do not edit the code below.
-var deleteTheBigNumbers = {
+var deleteTheBigNumber = {
   first: 10,
   second: 20,
   third: 110,
@@ -148,13 +178,15 @@ var deleteTheBigNumbers = {
 /*
   Write a for in loop that deletes every property from the object deleteTheBigNumbers whose value is greater than 100.
 */
-// for(var key in deleteTheBigNumbers){
-//   if(deleteTheBigNumbers[key]>100){
-//     delete key;
-//   }
-// }
-//Code Here
 
+//Code Here
+for (let key in deleteTheBigNumbers) {
+  if (deleteTheBigNumbers[key] > 100) {
+    delete deleteTheBigNumbers[key];
+  }
+}
+
+    
 
 
 ////////// PROBLEM 7 //////////
@@ -166,14 +198,24 @@ var deleteTheBigNumbers = {
   Return the updated object.
 */
 
-// function startsWith(obj){
-//   for(let key in obj){
-//     if(key.startsWith('k')){
-//       delete key;
-//     }
-//   }
-//   return obj;
-// }
+//Code Here
+let newOne ={
+  abc: 'dd',
+  kdk: 'dsss',
+  sms: 'we'
+}
+
+function startsWithK(obj){
+  for(let key in obj){
+    if(key.startsWith('k')){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+// startsWithK(newOne);
+
+
 
 
 
@@ -188,12 +230,24 @@ var deleteTheBigNumbers = {
   (hint: the method includes() may be of use...)
 */
 
-// function hiddenTreasure(obj){
-//   for(let in obj){
-//     if(obj[key].includes('treasure')= false){
-//       delete key;
-//     }
-//   }
-// }
+//Code Here
+
+let thing ={
+  a: 'this treasure is so valuable',
+  b: 'i think so',
+  c: 'we should sell this treasure'
+
+}
+
+
+function hiddenTreasure(obj){
+  for(let key in obj){
+    if(!obj[key].includes('treasure')){
+      delete obj[key];
+    }
+  }
+  return obj;
+}
+hiddenTreasure(thing);
 
 

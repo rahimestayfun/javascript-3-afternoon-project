@@ -11,34 +11,34 @@
 // Do not edit the code below.
 var employees = [
   {
-    "firstName": "Von",
-    "lastName": "Budibent",
-    "email": "vbudibent0@163.com",
-    "department": "Sales"
+    firstName: "Von",
+    lastName: "Budibent",
+    email: "vbudibent0@163.com",
+    department: "Sales"
   },
   {
-    "firstName": "Catherina",
-    "lastName": "Swalowe",
-    "email": "cswalowe1@example.com",
-    "department": "Engineering"
+    firstName: "Catherina",
+    lastName: "Swalowe",
+    email: "cswalowe1@example.com",
+    department: "Engineering"
   },
   {
-    "firstName": "Theo",
-    "lastName": "Trill",
-    "email": "ttrill2@sina.com.cn",
-    "department": "Services"
+    firstName: "Theo",
+    lastName: "Trill",
+    email: "ttrill2@sina.com.cn",
+    department: "Services"
   },
   {
-    "firstName": "Elsy",
-    "lastName": "McCrorie",
-    "email": "emccrorie3@netscape.com",
-    "department": "Legal"
+    firstName: "Elsy",
+    lastName: "McCrorie",
+    email: "emccrorie3@netscape.com",
+    department: "Legal"
   },
   {
-    "firstName": "Lorie",
-    "lastName": "Handsheart",
-    "email": "lhandsheart4@fotki.com",
-    "department": "Research and Development"
+    firstName: "Lorie",
+    lastName: "Handsheart",
+    email: "lhandsheart4@fotki.com",
+    department: "Research and Development"
   }
 ];
 // Do not edit the code above.
@@ -63,19 +63,33 @@ var employees = [
 // })
 // console.log(employeeUpdater())
 
-
-
-function employeeUpdater(){
-  for (let i=0; i< employees.length; i++){
-    if( employees[i].firstName=== 'Theo'){
+function employeeUpdater() {
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].firstName === "Theo") {
       delete employees[i].firstName;
-    }else if (employees[i].firstName=== 'Lorie'){
-     employees[i].department= 'HR';
-  }
+    } else if (employees[i].firstName === "Lorie") {
+      employees[i].department = "HR";
+    }
   }
   return employees;
 }
 employeeUpdater(employees);
+
+//with for in loop
+
+// function employeeUpdater() {
+//   for (let key in employees) {
+//     // console.log(employeem[key].firstName);
+
+//     if (employees[key].firstName === "Theo") {
+//       delete employees[key];
+//     } else if (employees[key].firstName === "Lorie") {
+//       employees[key].department = "HR";
+//     }
+//   }
+//   return employees;
+// }
+// employeeUpdater(employees);
 
 
 ////////// PROBLEM 2 //////////
@@ -93,37 +107,45 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 */
 
 //Code Here
-function removeDuplicates(){
-  for(let i=workplaceAccidents.length-1; i>=0; i--){
+// function removeDuplicates() {
+//   for (let i = workplaceAccidents.length - 1; i >= 0; i--) {
+//     if (
+//       workplaceAccidents.indexOf(workplaceAccidents[i]) !==
+//       workplaceAccidents.lastIndexOf(workplaceAccidents[i])
+//     ) {
+//       workplaceAccidents.splice(i, 1);
+//     }
+//   }
+//   return workplaceAccidents;
+// }
+// console.log(removeDuplicates());
 
-    if(workplaceAccidents.indexOf(workplaceAccidents[i]) !== workplaceAccidents.lastIndexOf(workplaceAccidents[i])){
-      workplaceAccidents.splice(i,1);
+function removeDuplicates(arr){
+  for(let i=arr.length-1; i>=0; i--){
+    if(arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])){
+      arr.splice(i,1);
     }
   }
-  return workplaceAccidents;
-  
+  return arr;
 }
-  console.log(removeDuplicates());
-
-
-
+removeDuplicates(workplaceAccidents);
 
 ////////// PROBLEM 3 //////////
 
 // Do not edit the code below.
 var cat = {
-  name: 'Fluffy',
+  name: "Fluffy",
   catFriends: [
     {
-      name: 'Grumpy',
-      activities: ['be grumpy', 'eat food']
-    }, 
+      name: "Grumpy",
+      activities: ["be grumpy", "eat food"]
+    },
     {
-      name: 'Lazy Bones',
-      activities: ['sleep', 'pre-sleep naps']
+      name: "Lazy Bones",
+      activities: ["sleep", "pre-sleep naps"]
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -132,37 +154,34 @@ var cat = {
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
-let grumpyActivity= cat.catFriends[0].activities[1];
-let fluffy2ndFriend=cat.catFriends[1].name;
-
-
-
+let grumpyActivity = cat.catFriends[0].activities[1];
+let fluffy2ndFriend = cat.catFriends[1].name;
 
 ////////// PROBLEM 4 //////////
 
 // Do not edit the code below.
 var myCar = {
-  make: 'Toyota',
-  model: 'Corolla',
+  make: "Toyota",
+  model: "Corolla",
   year: 1992,
   accidents: [
     {
-      date: '3/15/93',
-      damage: '$5,000',
+      date: "3/15/93",
+      damage: "$5,000",
       atFaultForAccident: true
     },
     {
-      date: '7/4/98',
-      damage: '$2,200',
+      date: "7/4/98",
+      damage: "$2,200",
       atFaultForAccident: true
     },
     {
-      date: '6/22/99',
-      damage: '$7,900',
+      date: "6/22/99",
+      damage: "$7,900",
       atFaultForAccident: true
     }
   ]
-}
+};
 // Do not edit the code above.
 
 /*
@@ -174,19 +193,20 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-function recordCleaner(){
-  for(let i=0;i<myCar.accidents.length;i++){
-    myCar.accidents[i].atFaultForAccident=false;
-
+function recordCleaner() {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    myCar.accidents[i].atFaultForAccident = false;
   }
 }
-
-
 
 ////////// PROBLEM 5 //////////
 
 // Do not edit the code below.
-var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
+var numsArr = [
+  [1, 2, 3, 4],
+  [5, 6],
+  [7, 8, 9, 10, 11]
+];
 // Do not edit the code above.
 
 /*
@@ -199,22 +219,19 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 */
 
 //Code Here
-function looper(){
+function looper() {
   // let nums=[];
-  for( let i=0; i<numsArr.length; i++){
+  for (let i = 0; i < numsArr.length; i++) {
     console.log(i);
-    for (let j=0; j<numsArr[i].length;j++){
-      if (numsArr[i][j] % 2===1){
-        numsArr[i][j] = ('odd');
-      } else if (numsArr[i][j]%2==0){
-        numsArr[i][j] = ('even');
+    for (let j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 1) {
+        numsArr[i][j] = "odd";
+      } else if (numsArr[i][j] % 2 == 0) {
+        numsArr[i][j] = "even";
+      }
     }
   }
-  
+  console.log(numsArr);
+  return numsArr;
+  // return nums;
 }
-console.log(numsArr);
-return numsArr;
-// return nums;
-}
-
-
